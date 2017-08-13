@@ -7,7 +7,9 @@
 from wechat import wx
 from flask import request
 import hashlib
+import xml.etree.ElementTree as ET
 import logging
+from ..service import wechat_service
 
 
 @wx.route('/g',methods=['GET'])
@@ -32,6 +34,5 @@ def check_signature():
 @wx.route('/g',methods=['POST'])
 def doHandle():
     xml = ET.fromstring(request.data)
-    service=WeChatService()
-    out=service.process(data)
+    out=wechat_service.parse(xml)
     return out
