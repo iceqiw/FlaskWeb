@@ -5,8 +5,9 @@
 #   E-mail  :   qqwei1123@163.com
 from website import api
 from ..service import queryService
+from flask import jsonify
 
-@api.route('/')
+@api.route('/g')
 def doHandle():
     queryService.printAll()
-    return 'ok'
+    return jsonify(res = 0)
