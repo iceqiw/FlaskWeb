@@ -7,7 +7,7 @@ from website import api
 from ..service import queryService
 from flask import jsonify
 
-@api.route('/g')
+@api.route('/g',methods=['POST'])
 def doHandle():
     queryService.printAll()
     return jsonify(res = 0)
