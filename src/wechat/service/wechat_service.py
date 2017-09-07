@@ -3,7 +3,7 @@
 #
 #   Author  :   qiwei
 #   E-mail  :   qqwei1123@163.com
-from ..model.tplModels import *
+from model.tplModels import *
 import time
 
 def parse(data):
