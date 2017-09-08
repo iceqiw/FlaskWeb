@@ -9,19 +9,21 @@ from flask import jsonify
 from flask import request
 from core.logger import mylogging
 
-@api.route('/user/login',methods=['POST'])
+
+@api.route('/user/login', methods=['POST'])
 def doHandle():
-    pwd=request.json['password']
-    username=request.json['username']
-    if pwd=='1':
-        return jsonify(res = 1)
-    queryService.printAll()
-    return jsonify(res = 0)
+    pwd = request.json['password']
+    username = request.json['username']
+    doPass=queryService.isOk(username,pwd)
+    if doPass:
+        return jsonify(res=0)
+    else:
+        return jsonify(res=1)
+    
 
 
 @api.route('/jxSearch/<topic>')
 def doSaveTpl(topic):
     mylogging.info(topic)
-    alist=queryService.search(topic)
+    alist = queryService.search(topic)
     return jsonify(alist)
-

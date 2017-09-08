@@ -15,6 +15,17 @@ def printAll():
         mylogging.info(h.username)
 
 
+def isOk(u, p):
+    try:
+        tmp = User.select().where(User.username==u).get()
+        mylogging.info(tmp)
+        if tmp.password == p:
+            return True
+    except:
+        return False
+    return False
+
+
 def saveTpl(key, tpl):
     User.create(owner=uncle_bob, name='Kitty', animal_type='cat')
 

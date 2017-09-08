@@ -1,5 +1,0 @@
-2017-09-08 10:57:32,408 - werkzeug - INFO -  * Running on http://0.0.0.0:19999/ (Press CTRL+C to quit)
-2017-09-08 10:57:48,948 - simpleExample - INFO - login
-2017-09-08 10:57:48,964 - werkzeug - INFO - 127.0.0.1 - - [08/Sep/2017 10:57:48] "GET /api/jxSearch/login HTTP/1.1" 200 -
-2017-09-08 10:57:49,853 - simpleExample - INFO - login
-2017-09-08 10:57:49,865 - werkzeug - INFO - 127.0.0.1 - - [08/Sep/2017 10:57:49] "GET /api/jxSearch/login HTTP/1.1" 200 -
