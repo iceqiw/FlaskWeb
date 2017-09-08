@@ -14,7 +14,7 @@ def createAPP():
     app.register_blueprint(api, url_prefix='/api')
     return app
 
+app=createAPP()
 
 if __name__ == '__main__':
-    app=createAPP()
     app.run(host='0.0.0.0',port=19999)
