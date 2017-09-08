@@ -8,11 +8,13 @@ from flask import Flask
 from wechat import wx
 from website import api
 
-
-app = Flask(__name__)
-app.register_blueprint(wx, url_prefix='/wechat')
-app.register_blueprint(api, url_prefix='/api')
+def createAPP():
+    app = Flask(__name__)
+    app.register_blueprint(wx, url_prefix='/wechat')
+    app.register_blueprint(api, url_prefix='/api')
+    return app
 
 
 if __name__ == '__main__':
+    app=createAPP()
     app.run(host='0.0.0.0',port=19999)

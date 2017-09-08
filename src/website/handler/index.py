@@ -7,6 +7,7 @@ from website import api
 from ..service import queryService
 from flask import jsonify
 from flask import request
+from core.logger import mylogging
 
 @api.route('/user/login',methods=['POST'])
 def doHandle():
@@ -20,7 +21,7 @@ def doHandle():
 
 @api.route('/jxSearch/<topic>')
 def doSaveTpl(topic):
-    print(topic)
+    mylogging.info(topic)
     alist=queryService.search(topic)
     return jsonify(alist)
 

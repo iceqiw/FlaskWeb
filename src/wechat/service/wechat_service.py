@@ -4,6 +4,7 @@
 #   Author  :   qiwei
 #   E-mail  :   qqwei1123@163.com
 from model.tplModels import *
+from core.logger import mylogging
 import time
 
 def parse(data):
@@ -37,6 +38,6 @@ def reply(openid,appid,tpl):
     if not tpl.strip():
         return "null"
     CreateTime = int(time.time())
-    print(tpl)
+    mylogging.info(tpl)
     out = tpl % (openid, appid, CreateTime)
     return out

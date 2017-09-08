@@ -7,12 +7,12 @@
 #   Desc    :   首页控制器
 
 from model.userModels import *
-import logging
+from core.logger import mylogging
 
 
 def printAll():
     for h in User.select():
-        print(h.username)
+        mylogging.info(h.username)
 
 
 def saveTpl(key, tpl):

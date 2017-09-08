@@ -8,7 +8,7 @@ from wechat import wx
 from flask import request
 import hashlib
 import xml.etree.ElementTree as ET
-import logging
+from core.logger import mylogging
 from ..service import wechat_service
 
 
@@ -22,7 +22,7 @@ def check_signature():
         echostr = request.args.get('echostr', '')
         s = ''.join(sorted([timestamp, nonce, token]))
         sha1 = hashlib.sha1(s.encode('utf-8')).hexdigest()
-        logging.debug(sha1)
+        mylogging.debug(sha1)
         if sha1 == signature:
             return echostr
         else:
